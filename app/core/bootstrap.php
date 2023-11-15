@@ -11,3 +11,5 @@
 			new QueryBuilder(
 				Connection::make(App::get('config')['database'])
 		));
+
+	App::bind('root', App::get('config')['root']);

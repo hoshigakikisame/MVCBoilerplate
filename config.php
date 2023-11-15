@@ -23,5 +23,6 @@
 			'options' => [
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 			]
-		]
+		],
+		'root' => str_replace("/", "\/", dirname($_SERVER['SCRIPT_NAME'])) 
 	];

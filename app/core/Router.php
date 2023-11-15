@@ -38,7 +38,7 @@
 					);
 			}
 			else {
-					http_status_code(404);
+					http_response_code(404);
 					throw new Exception("Route: " . $uri . " not found!");
 			}
 		}
@@ -54,7 +54,7 @@
 		protected function callAction(string $controller, string $method)
 		{
 			if (!method_exists($controller, $method)) {
-				http_status_code(500);
+				http_response_code(500);
 				throw new Exception($method . " not define on " . $controller);
 			}
 
@@ -128,7 +128,7 @@
 		 * @param  string $controller
 		 * @return mixed
 		 */
-		public function patch($uri, $controller)
+		public function header($uri, $controller)
 		{
 			$this->routes['HEAD'][$uri] = $controller;
 		}
