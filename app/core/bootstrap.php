@@ -5,11 +5,13 @@
  * More may be added by following the convention that's used.
  */
 
-	App::bind('config', require 'config.php');
+App::bind('config', require 'config.php');
 
-	App::bind('database',
-			new QueryBuilder(
-				Connection::make(App::get('config')['database'])
-		));
+App::bind(
+	'database',
+	new QueryBuilder(
+		Connection::make(App::get('config')['database'])
+	)
+);
 
-	App::bind('root', App::get('config')['root']);
+App::bind('root', App::get('config')['root']);
