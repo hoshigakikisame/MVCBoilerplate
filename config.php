@@ -24,5 +24,5 @@ return [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		]
 	],
-	'root' => str_replace("/", "\/", dirname($_SERVER['SCRIPT_NAME']))
+	'root_uri' => dirname($_SERVER['SCRIPT_NAME'])
 ];

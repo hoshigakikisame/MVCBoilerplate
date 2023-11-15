@@ -126,7 +126,7 @@ class Router
 	 * @param  string $controller
 	 * @return mixed
 	 */
-	public function header($uri, $controller)
+	public function head($uri, $controller)
 	{
 		$this->routes['HEAD'][$uri] = $controller;
 	}

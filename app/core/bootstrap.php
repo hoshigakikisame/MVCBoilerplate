@@ -14,4 +14,4 @@ App::bind(
 	)
 );
 
-App::bind('root', App::get('config')['root']);
+App::bind('root_uri', App::get('config')['root_uri']);

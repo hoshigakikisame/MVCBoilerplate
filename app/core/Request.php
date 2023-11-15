@@ -9,12 +9,12 @@ class Request
 	 */
 	public static function uri()
 	{
-		$uri = preg_replace("/^" . App::get('root') . "/", '', $_SERVER['REQUEST_URI']);
+		$rootUri = str_replace('/', '\\/', (App::get('root_uri') == '\\' ? '' : App::get('root_uri')));
+		$uri = preg_replace("/^$rootUri/", '', $_SERVER['REQUEST_URI']);
 		$uri = trim(
 			parse_url($uri, PHP_URL_PATH),
 			'/'
 		);
-		// echo $uri;
 		return $uri;
 	}
 
